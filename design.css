@@ -16,6 +16,17 @@
   src: url(./fonts/W_500.woff) format("woff");
 }
 
+@font-face {
+  font-family: Whitney;
+  font-weight: 600;
+  src: url(./fonts/W_600.woff) format("woff");
+}
+
+@font-face {
+  font-family: Whitney;
+  font-weight: 700;
+  src: url(./fonts/W_700.woff) format("woff");
+}
 
 :root {
   --green: #43b581;
@@ -26,56 +37,22 @@
   --another-gray: #292b2f;
   --dark-gray: #2f3136;
   --dark: #202225;
-  --black: #000000;
-  --white: #ffffff;
-  --light-font: #b9bbbe;
-  --custom-color: #56595e;
-  --text: #8e9297;
+  --text: #ffffff;
+  --low-text: #8e9297;
+  --max-width: 1333px;
 }
 
 * {
   margin: 0;
   padding: 0;
-  position: relative;
   font-family: Whitney;
-  color: white;
-}
-
-h1 {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-h2 {
-  font-size: 16px;
-  font-weight: 300;
-}
-
-h3 {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-h4 {
-  font-size: 16px;
-  font-weight: 300;
-}
-
-a {
+  color: var(--text);
+  font-weight: 400;
   text-decoration: none;
-  user-select: none;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background-color: var(--gray);
-  height: 100vh;
-  /* width: 100vw; */
-}
-
-article {
-  margin: 169px 0;
 }
 
 header {
@@ -83,105 +60,81 @@ header {
 }
 
 header>div {
-  height: 69px;
-  max-width: 1169px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
-  align-items: center;
-  padding: 10px calc(10% - 50px);
+  max-width: var(--max-width);
 }
 
 header>div>* {
-  /* margin: 0 69px; */
-}
-
-#akume {
   display: flex;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  user-select: none;
+  list-style: none;
+  align-items: center;
+  margin: 25px 50px;
 }
 
-#akume h3 {
-  display: flex;
-}
-
-#akume:hover {
-  /* background-color: rgba(255, 255, 255, .015); */
-  background-color: rgba(79, 84, 92, 0.16);
-}
-
-#akume img {
+header img {
   height: 50px;
   width: 50px;
   border-radius: 25%;
   margin-right: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-  margin-top: -2px;
 }
 
-#akume h3::after {
-  content: "BOT";
-  background-color: var(--blue);
-  margin-left: 10px;
-  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.25);
-  font-size: 12px;
-  padding: 1px 5px;
-  margin-top: 5px;
-  border-radius: 3px;
-  height: 15px;
+header h3 {
+  font-size: 20px;
+  font-weight: 500;
 }
 
-#akume h4 {
-  color: rgb(142, 146, 151);
+header h4 {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--low-text);
 }
 
-#menu {
-  display: flex;
-  list-style: none;
-}
-
-#menu li {
+header li {
   margin: 0 20px;
-}
-
-#menu a {
-  color: white;
   font-size: 18px;
 }
 
-#menu a:hover {
+header a:hover {
   text-decoration: underline;
 }
 
-main {
-  max-width: 1169px;
+article {
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 10px calc(10% - 50px);
+  padding: 150px 0 0;
 }
 
-#main {
-  max-width: 769px;
+article:first-child>* {
+  max-width: 999px;
 }
 
-#main h1 {
-  font-size: 40px;
-  margin-top: 169px;
+article>* {
+  margin: 20px 50px;
 }
 
-#main h2 {
+article h1 {
+  font-size: 69px;
+  font-weight: 500;
+}
+
+article strong {
+  font-weight: 700;
+}
+
+article h2 {
   font-size: 25px;
-  color: rgb(142, 146, 151);
-  margin: 10px 0 30px;
+  font-weight: 400;
+  color: var(--low-text);
 }
 
-#main a {
+article a {
   padding: 10px 20px;
   background-color: var(--blue);
-  color: white;
+  color: var(--text);
   font-size: 25px;
   border-radius: 4px;
   display: inline-block;
@@ -189,117 +142,26 @@ main {
   font-weight: 500;
 }
 
-#main a:hover {
-  transform: scale(1.01) translateY(-2px);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#main a::before {
+article a::before {
   content: "";
   display: inline-block;
   background: url(https://cdn.discordapp.com/attachments/750711837355671612/906686472042729562/add.svg);
-  height: 30px;
+  height: 29px;
   width: 29px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   margin: 0 6px -6px -6px;
+  transition: all .25s,
 }
 
-#cmd {
-  display: flex;
-}
-#cmd ul {
-  margin-bottom: 50px;
-  list-style: none;
+article a:hover {
+  filter: brightness(0.9);
+  transform: scale(1.01) translateY(-2px);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
 }
 
-#cmd h5 {
-  font-size: 40px;
-  background-color: var(--dark-gray);
-  border-radius: 3px;
-  display: inline-block;
-  padding: 0px 10px;
-  font-weight: 300;
-  font-family: Consolas;
-  margin-bottom: 10px;
-  cursor: pointer;
+article a:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.25);
 }
-
-#cmd h5::before {
-  content: "/";
-}
-
-#cmd img {
-  height: 100%;
-  margin-left: 50px;
-}
-
-
-/*#main a svg {
-  height: 30px;
-  width: 30px;
-  margin: 0 6px -6px -6px;
-  background-color: white;
-  border-radius: 3px;
-}*/
-/*
-header > div {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  user-select: none;
-  background-color: var(--dark-gray);
-  padding-bottom: 5px;
-}
-
-header h1 {
-  margin: 0 50px 0 100px;
-}
-
-header ul {
-}
-
-header ul {
-  list-style-type: none;
-  display: inline-flex;
-    margin: 0 100px 0 50px;
-}
-
-header li a {
-  font-size: 16px;
-  padding: 5px 10px;
-  margin: 0 20px;
-  color: var(--text);
-  color: var(--white);
-  text-decoration: none;
-  transition: color 0.25s;
-}
-
-header li a:hover {
-  color: var(--white);
-  text-decoration: underline;
-}
-
-header li svg {
-  height: 20px;
-  vertical-align: text-bottom;
-  margin-right: -3px;
-}
-
-.bot::after {
-  content: "BOT";
-  background-color: var(--blue);
-  margin-left: 10px;
-  padding: 2px 7px;
-  border-radius: 5px;
-  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.25);
-  font-size: 20px;
-}
-
-header h1 {
-  font-size: 25px;
-  cursor: pointer;
-  color: var(--white)
-}
-*/
