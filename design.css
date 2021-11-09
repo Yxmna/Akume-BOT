@@ -108,17 +108,14 @@ article {
   padding: 150px 0 0;
 }
 
-article:first-child>* {
-  max-width: 999px;
-}
-
 article>* {
   margin: 20px 50px;
 }
 
 article h1 {
-  font-size: 69px;
+  font-size: 34.5px;
   font-weight: 500;
+  /* max-width: 444px; */
 }
 
 article strong {
@@ -126,16 +123,17 @@ article strong {
 }
 
 article h2 {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 400;
   color: var(--low-text);
+  max-width: 888px;
 }
 
 article a {
   padding: 10px 20px;
   background-color: var(--blue);
   color: var(--text);
-  font-size: 25px;
+  font-size: 22px;
   border-radius: 4px;
   display: inline-block;
   transition: all .25s;
@@ -143,7 +141,7 @@ article a {
 }
 
 article a::before {
-  content: "";
+  /* content: ""; */
   display: inline-block;
   background: url(https://cdn.discordapp.com/attachments/750711837355671612/906686472042729562/add.svg);
   height: 29px;
